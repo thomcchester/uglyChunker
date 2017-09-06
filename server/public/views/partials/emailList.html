@@ -1,0 +1,56 @@
+<md-content laout="column" flex>
+<md-card>
+
+        <md-toolbar class="md-table-toolbar md-default" ng-hide="options.rowSelection && selected.length">
+          <div class="md-toolbar-tools">
+            <span>Email List</span>
+            <div flex></div>
+          </div>
+        </md-toolbar>
+
+        <md-toolbar class="md-table-toolbar alternate" ng-show="options.rowSelection && selected.length">
+          <div class="md-toolbar-tools">
+            <span>{{selected.length}} {{selected.length > 1 ? 'items' : 'item'}} selected</span>
+          </div>
+        </md-toolbar>
+
+        <md-table-container>
+          <table md-table md-row-select="options.rowSelection" ng-model="selected" md-progress="promise">
+            <thead md-head md-order="query.order" md-on-reorder="logOrder">
+              <tr md-row>
+                <th md-column md-order-by="date"><span>Date</span></th>
+                <th md-column md-order-by="email"><span>Email</span></th>
+                <th md-column md-order-by="marital_status"><span>Marital Status</span></th>
+                <th md-column md-numeric md-order-by="zip_code"><span>Zip Code</span></th>
+                <th md-column md-numeric md-order-by="income"><span>Income</span></th>
+                <th md-column md-numeric md-order-by="target_property_price"><span>Target Property Price</span></th>
+                <th md-column md-order-by="status">Status</th>
+                <th md-column>Change Status</th>
+                <th md-column>Delete</th>
+              </tr>
+            </thead>
+            <tbody md-body>
+              <tr md-row class="{{item.status}}" ng-repeat="item in emailList | filter: filter.search | orderBy: query.order | limitTo: query.limit : (query.page -1) * query.limit">
+                <td md-cell>{{item.date}}</td>
+                <td md-cell>{{item.email}}</td>
+                <td md-cell ng-switch on="item.marital_status">
+                  <p ng-switch-when="false">Single</p>
+                  <p ng-switch-when="true">Married</p>
+                </td>
+                <td md-cell>{{item.zip_code}}</td>
+                <td md-cell>{{item.income}}</td>
+                <td md-cell>{{item.target_property_price}}</td>
+                <td md-cell>{{item.status}}</td>
+                <td md-cell ng-switch on="item.status">
+                  <p ng-switch-when="Not Contacted"><md-button class="md-raised" ng-click="changeStatus(item)">Change Status</md-button></p>
+                  <p ng-switch-when="Contacted"><md-button class="md-raised" ng-click="changeStatusBack(item)">Change Status</md-button></p>
+                </td>
+                <td md-cell><md-button class="md-raised md-warn" ng-click="deleteContact(item)">Delete Contact</md-button></td>
+              </tr>
+            </tbody>
+          </table>
+        </md-table-container>
+
+        <md-table-pagination md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page" md-total="{{count}}" md-page-select="options.pageSelect" md-boundary-links="options.boundaryLinks" md-on-paginate="logPagination"></md-table-pagination>
+      </md-card>
+    </md-content>

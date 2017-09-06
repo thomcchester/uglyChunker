@@ -1,0 +1,338 @@
+<p class="admin1stH5">
+  You may set default variables with this form.
+</p>
+<div>
+  <form name="defaultValuesForm">
+    <div layout="row">
+      <div flex="25">
+        <h5 class="admin1stH5">Variable:</h5>
+      </div>
+      <div flex="25">
+        <h5>Default</h5>
+      </div>
+      <div flex="25">
+        <h5>Min</h5>
+      </div>
+      <div flex="25">
+        <h5>Max</h5>
+      </div>
+    </div>
+
+    <div layout="row" class="adminFormDiv odd">
+      <div flex="25">
+        <label class="adminLabel">Monthly Rent</label>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="monthlyRentPersonalDef" id="monthlyRentPersonalDef" ng-model="defaultVariables.monthlyRentPersonalDef" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="monthlyRentPersonalMin" id="monthlyRentPersonalMin" ng-model="defaultVariables.monthlyRentPersonalMin" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="monthlyRentPersonalMax" id="monthlyRentPersonalMax" ng-model="defaultVariables.monthlyRentPersonalMax" required>
+      </div>
+    </div>
+    <div layout="row" class="adminFormDiv odd">
+      <div flex="25">
+        <label class="adminLabel">Monthly Renter Insurance</label>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="renterInsuranceDef" id="renterInsuranceDef" ng-model="defaultVariables.renterInsuranceDef" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="renterInsuranceMin" id="renterInsuranceMin" ng-model="defaultVariables.renterInsuranceMin" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="renterInsuranceMax" id="renterInsuranceMax" ng-model="defaultVariables.renterInsuranceMax" required>
+      </div>
+    </div>
+
+    <div layout="row" class="adminFormDiv odd">
+      <div flex="25">
+        <label class="adminLabel">appreciation Rate</label>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="appreciationRateDef" id="appreciationRateDef" ng-model="defaultVariables.appreciationRateDef" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="appreciationRateMin" id="appreciationRateMin" ng-model="defaultVariables.appreciationRateMin" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="appreciationRateMax" id="appreciationRateMax" ng-model="defaultVariables.appreciationRateMax" required>
+      </div>
+    </div>
+
+    <div layout="row" class="adminFormDiv odd">
+      <div flex="25">
+        <label class="adminLabel">appreciation Rate</label>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="appreciationRateHomeDef" id="appreciationRateHomeDef" ng-model="defaultVariables.appreciationRateHomeDef" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="appreciationRateHomeMin" id="appreciationRateHomeMin" ng-model="defaultVariables.appreciationRateHomeMin" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="appreciationRateHomeMax" id="appreciationRateHomeMax" ng-model="defaultVariables.appreciationRateHomeMax" required>
+      </div>
+    </div>
+
+
+    <div layout="row" class="adminFormDiv">
+      <div flex="25">
+        <label class="adminLabel">Tenant's Monthly Rent</label>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="monthlyRentTenantDef" id="monthlyRentTenantDef" ng-model="defaultVariables.monthlyRentTenantDef" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="monthlyRentTenantMin" id="monthlyRentTenantMin" ng-model="defaultVariables.monthlyRentTenantMin" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="monthlyRentTenantMax" id="monthlyRentTenantMax" ng-model="defaultVariables.monthlyRentTenantMax" required>
+      </div>
+    </div>
+
+    <div layout="row" class="adminFormDiv odd">
+      <div flex="25">
+        <label class="adminLabel">Purchase Price</label>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="targetPriceDef" id="targetPriceDef" ng-model="defaultVariables.targetPriceDef" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="targetPriceMin" id="targetPriceMin" ng-model="defaultVariables.targetPriceMin" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="targetPriceMax" id="targetPriceMax" ng-model="defaultVariables.targetPriceMax" required>
+      </div>
+    </div>
+
+    <div layout="row" class="adminFormDiv odd">
+      <div flex="25">
+        <label class="adminLabel">Duplex Purchase Price</label>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="duplexBuyDef" id="duplexBuyDef" ng-model="defaultVariables.duplexBuyDef" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="duplexBuyMin" id="duplexBuyMin" ng-model="defaultVariables.duplexBuyMin" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="duplexBuyMax" id="duplexBuyMax" ng-model="defaultVariables.duplexBuyMax" required>
+      </div>
+    </div>
+
+
+    <div layout="row" class="adminFormDiv">
+      <div flex="25">
+        <label class="adminLabel">Down Payment Percentage</label>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="downPaymentPercentageDef" id="downPaymentPercentageDef" ng-model="defaultVariables.downPaymentPercentageDef" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="downPaymentPercentageMin" id="downPaymentPercentageMin" ng-model="defaultVariables.downPaymentPercentageMin" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="downPaymentPercentageMax" id="downPaymentPercentageMax" ng-model="defaultVariables.downPaymentPercentageMax" required>
+      </div>
+    </div>
+
+    <div layout="row" class="adminFormDiv odd">
+      <div flex="25">
+        <label class="adminLabel">Mortgage Rate</label>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="mortgageRateDef" id="mortgageRateDef" ng-model="defaultVariables.mortgageRateDef" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="mortgageRateMin" id="mortgageRateMin" ng-model="defaultVariables.mortgageRateMin" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="mortgageRateMax" id="mortgageRateMax" ng-model="defaultVariables.mortgageRateMax" required>
+      </div>
+    </div>
+
+    <div layout="row" class="adminFormDiv">
+      <div flex="25">
+        <label class="adminLabel">Years Ammoritized</label>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="yearsAmmoritizedDef" id="yearsAmmoritizedDef" ng-model="defaultVariables.yearsAmmoritizedDef" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="yearsAmmoritizedMin" id="yearsAmmoritizedMin" ng-model="defaultVariables.yearsAmmoritizedMin" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="yearsAmmoritizedMax" id="yearsAmmoritizedMax" ng-model="defaultVariables.yearsAmmoritizedMax" required>
+      </div>
+    </div>
+
+    <div layout="row" class="adminFormDiv odd">
+      <div flex="25">
+        <label class="adminLabel">Income</label>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="incomeDef" id="incomeDef" ng-model="defaultVariables.incomeDef" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="incomeMin" id="incomeMin" ng-model="defaultVariables.incomeMin" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="incomeMax" id="incomeMax" ng-model="defaultVariables.incomeMax" required>
+      </div>
+    </div>
+
+    <div layout="row" class="adminFormDiv">
+      <div flex="25">
+        <label class="adminLabel">Mortgage Years</label>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="mortgageYearsDef" id="mortgageYearsDef" ng-model="defaultVariables.mortgageYearsDef" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="mortgageYearsMin" id="mortgageYearsMin" ng-model="defaultVariables.mortgageYearsMin" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="mortgageYearsMax" id="mortgageYearsMax" ng-model="defaultVariables.mortgageYearsMax" required>
+      </div>
+    </div>
+
+    <div layout="row" class="adminFormDiv odd">
+      <div flex="25">
+        <label class="adminLabel">Vacancy Rate</label>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="vacancyDef" id="vacancyDef" ng-model="defaultVariables.vacancyDef" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="vacancyMin" id="vacancyMin" ng-model="defaultVariables.vacancyMin" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="vacancyMax" id="vacancyMax" ng-model="defaultVariables.vacancyMax" required>
+      </div>
+    </div>
+
+    <div layout="row" class="adminFormDiv">
+      <div flex="25">
+        <label class="adminLabel">Annual Property Tax</label>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="propertyTaxDef" id="propertyTaxDef" ng-model="defaultVariables.propertyTaxDef" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="propertyTaxMin" id="propertyTaxMin" ng-model="defaultVariables.propertyTaxMin" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="propertyTaxMax" id="propertyTaxMax" ng-model="defaultVariables.propertyTaxMax" required>
+      </div>
+    </div>
+
+    <div layout="row" class="adminFormDiv odd">
+      <div flex="25">
+        <label class="adminLabel">Association Dues</label>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="assocDuesDef" id="assocDuesDef" ng-model="defaultVariables.assocDuesDef" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="assocDuesMin" id="assocDuesMin" ng-model="defaultVariables.assocDuesMin" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="assocDuesMax" id="assocDuesMax" ng-model="defaultVariables.assocDuesMax" required>
+      </div>
+    </div>
+
+    <div layout="row" class="adminFormDiv">
+      <div flex="25">
+        <label class="adminLabel">Management Costs</label>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="managementDef" id="managementDef" ng-model="defaultVariables.managementDef" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="managementMin" id="managementMin" ng-model="defaultVariables.managementMin" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="managementMax" id="managementMax" ng-model="defaultVariables.managementMax" required>
+      </div>
+    </div>
+
+    <div layout="row" class="adminFormDiv odd">
+      <div flex="25">
+        <label class="adminLabel">Misc. Expenses</label>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="miscDef" id="miscDef" ng-model="defaultVariables.miscDef" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="miscMin" id="miscMin" ng-model="defaultVariables.miscMin" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="miscMax" id="miscMax" ng-model="defaultVariables.miscMax" required>
+      </div>
+    </div>
+
+    <div layout="row" class="adminFormDiv">
+      <div flex="25">
+        <label class="adminLabel">Annual Insurance Payment</label>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="insuranceAnnualDef" id="insuranceAnnualDef" ng-model="defaultVariables.insuranceAnnualDef" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="insuranceAnnualMin" id="insuranceAnnualMin" ng-model="defaultVariables.insuranceAnnualMin" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="insuranceAnnualMax" id="insuranceAnnualMax" ng-model="defaultVariables.insuranceAnnualMax" required>
+      </div>
+    </div>
+
+    <div layout="row" class="adminFormDiv odd">
+      <div flex="25">
+        <label class="adminLabel">Utility Rate</label>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="utilsDef" id="utilsDef" ng-model="defaultVariables.utilsDef" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="utilsMin" id="utilsMin" ng-model="defaultVariables.utilsMin" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="utilsMax" id="utilsMax" ng-model="defaultVariables.utilsMax" required>
+      </div>
+    </div>
+
+    <div layout="row" class="adminFormDiv">
+      <div flex="25">
+        <label class="adminLabel">Legal Accounting</label>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="legalAccountingDef" id="legalAccountingDef" ng-model="defaultVariables.legalAccountingDef" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="legalAccountingMin" id="legalAccountingMin" ng-model="defaultVariables.legalAccountingMin" required>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="legalAccountingMax" id="legalAccountingMax" ng-model="defaultVariables.legalAccountingMax" required>
+      </div>
+    </div>
+
+    <div layout="row" class="adminFormDiv odd">
+      <div flex="25">
+        <label class="adminLabel">ZIP Code</label>
+      </div>
+      <div flex="25">
+        <input type="number" step="any" name="zipCode" id="zipCode" ng-model="defaultVariables.zipCode" required>
+      </div>
+    </div>
+
+    <div class="adminSubmit">
+      <md-button class="md-raised md-primary" type="submit" value="Submit Default Values" ng-click="defaultValuesForm.$valid && setDefaultValues(defaultVariables)">Submit Default Values</md-button>
+    </div>
+
+
+
+  </form>
+</div>
