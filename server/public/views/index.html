@@ -2,7 +2,7 @@
 <html ng-app="App">
 <head>
     <meta charset="utf-8">
-    <title>Duplex Chick Calculator</title>
+    <title>Ugly Chunker</title>
 
     <!-- package manager scripts -->
 
@@ -26,206 +26,32 @@
     <header>
         <md-toolbar style="height:10vh;">
             <div layout="row" layout-align="center">
-                <h1>Duplex Chick Investment Calculator</h1>
+                <h1>uglyChunker</h1>
             </div>
         </md-toolbar>
     </header>
     <div layout="row">
-        <md-sidenav md-component-id="left" class="md-sidenav-left md-whiteframe-z2" md-is-locked-open="true" style="overflow-y: scroll; height: 90vh;">
-            <div layout="column" layout-align="center center" layout-padding>
-                <md-content>
-                    <form>
-                        <h2>Investor Information</h2>
-                        <md-input-container class="md-block">
-                            <label>Zip Code</label>
-                            <input class="chick-input" ng-model="inputData.zipCode" aria-label="zip code" id="zip-code" style="border-style: solid; border-width: 1px 1px 1px 1px; text-align:center;">
-                        </md-input-container>
-                        <md-input-container class="md-block">
-                            <label>Years Owned</label>
-                            <input flex type="number" style="border-style: solid; border-width: 1px 1px 1px 1px; text-align:center;" ng-model="inputData.years" aria-label="years owned" md-autofocus>
-                            <br>
-                            <md-slider-container>
-                                <md-slider class="md-block" flex min="{{minMax.yearsMin}}" aria-label="years owned" max="{{minMax.yearsMax}}"  ng-model="inputData.years">
-                                </md-slider>
-                            </md-slider-container>
-                        </md-input-container>
-
-                        <h2>Rent</h2>
-                        <md-input-container class="md-block">
-                            <label>Monthly Rent</label>
-                            <input flex type="number" style="border-style: solid; border-width: 1px 1px 1px 1px; text-align:center;" ng-model="inputData.monthlyRentPersonal" aria-label="monthly rent">
-                            <br>
-                            <md-slider-container>
-                                <md-slider flex step="50" min="{{minMax.monthlyRentPersonalMin}}" aria-label="monthly rent" max="{{minMax.monthlyRentPersonalMax}}"  ng-model="inputData.monthlyRentPersonal">
-                                </md-slider>
-                            </md-slider-container>
-                        </md-input-container>
-
-                        <h2>Buy</h2>
-                        <md-input-container class="md-block">
-                            <md-slider-container>
-                                <label>Property Purchase Price</label>
-                                <input flex type="number" style="border-style: solid; border-width: 1px 1px 1px 1px; text-align:center;"ng-model="inputData.targetPrice" aria-label="property purchase price">
-                                <br>
-                                <md-slider min="{{minMax.targetPriceMin}}" max="{{minMax.targetPriceMax}}" aria-label="property purchase price" ng-model="inputData.targetPrice">
-                                </md-slider>
-                            </md-slider-container>
-                        </md-input-container>
-                        <md-input-container class="md-block">
-                            <label>Down Payment</label>
-                            <input flex type="number" style="border-style: solid; border-width: 1px 1px 1px 1px; text-align:center;"ng-model="inputData.downPaymentPercentage" aria-label="down payment">
-                            <br>
-                            <md-slider-container>
-                                <md-slider flex step=".1" min="{{minMax.downPaymentPercentageMin}}" aria-label="down payment" max="{{minMax.downPaymentPercentageMax}}" ng-model="inputData.downPaymentPercentage">
-                                </md-slider>
-                            </md-slider-container>
-                        </md-input-container>
-                        <md-input-container class="md-block">
-                            <label>Mortgage Rate</label>
-                            <input flex type="number" style="border-style: solid; border-width: 1px 1px 1px 1px; text-align:center;"ng-model="inputData.mortgageRate" aria-label="mortgage rate">
-                            <br>
-                            <md-slider-container>
-                                <md-slider flex step=".1" min="{{minMax.mortgageRateMin}}" aria-label="mortgage rate" max="{{minMax.mortgageRateMax}}" ng-model="inputData.mortgageRate">
-                                </md-slider>
-                            </md-slider-container>
-                        </md-input-container>
-                        <md-input-container class="md-block">
-                            <label>Mortgage Term</label>
-                            <input flex type="number" style="border-style: solid; border-width: 1px 1px 1px 1px; text-align:center;"ng-model="inputData.mortgageYears" aria-label="mortgage term">
-                            <br>
-                            <md-slider-container>
-                                <md-slider flex step="5" min="{{minMax.mortgageYearsMin}}" aria-label="mortgage term" max="{{minMax.mortgageYearsMax}}" ng-model="inputData.mortgageYears">
-                                </md-slider>
-                            </md-slider-container>
-                        </md-input-container>
-                        <md-input-container class="md-block">
-                            <label>Home Appreciation Rate</label>
-                            <input flex type="number" style="border-style: solid; border-width: 1px 1px 1px 1px; text-align:center;"ng-model="inputData.appreciationRateHome" aria-label="home appreciation rate">
-                            <br>
-                            <md-slider-container>
-                                <md-slider flex step=".1" min="{{minMax.appreciationRateHomeMin}}" aria-label="home appreciation rate" max="{{minMax.appreciationRateHomeMax}}" ng-model="inputData.appreciationRateHome">
-                                </md-slider>
-                            </md-slider-container>
-                        </md-input-container>
-
-                        <md-input-container class="md-block">
-                            <label>Monthly Insurance Costs</label>
-                            <input flex type="number" style="border-style: solid; border-width: 1px 1px 1px 1px; text-align:center;"ng-model="inputData.insuranceAnnual" aria-label="monthly insurance costs">
-                            <br>
-                            <md-slider-container>
-                                <md-slider flex step="10" min="{{minMax.insuranceAnnualMin}}" aria-label="monthly insurance costs" max="{{minMax.insuranceAnnualMax}}" ng-model="inputData.insuranceAnnual">
-                                </md-slider>
-                            </md-slider-container>
-                        </md-input-container>
-
-
-
-
-                        <h2>Duplex</h2>
-                        <label>Different Duplex Purchase Price?</label>
-                        <md-switch ng-model="inputData.differentDuplexPurchasePrice" aria-label="use a different duplex purchase price" class="md-primary">
-                        </md-switch>
-
-
-                        <md-input-container ng-show="inputData.differentDuplexPurchasePrice === true">
-                          <label>Duplex Purchase Price</label>
-                          <input flex type="number" style="border-style: solid; border-width: 1px 1px 1px 1px; text-align:center;"ng-model="inputData.duplexBuy" aria-label="duplex buy">
-                          <br>
-                          <md-slider-container>
-                              <md-slider flex step="50" min="{{minMax.duplexBuyMin}}" aria-label="duplex buy" max="{{minMax.duplexBuyMax}}" ng-model="inputData.duplexBuy">
-                              </md-slider>
-                          </md-slider-container>
-                        </md-input-container>
-
-                        <md-input-container class="md-block">
-                            <label>Tenant Rent</label>
-                            <input flex type="number" style="border-style: solid; border-width: 1px 1px 1px 1px; text-align:center;"ng-model="inputData.monthlyRentTenant" aria-label="tenant rent">
-                            <br>
-                            <md-slider-container>
-                                <md-slider flex step="50" min="{{minMax.monthlyRentTenantMin}}" aria-label="tenant rent" max="{{minMax.monthlyRentTenantMax}}" ng-model="inputData.monthlyRentTenant">
-                                </md-slider>
-                            </md-slider-container>
-                        </md-input-container>
-
-                        <md-input-container class="md-block">
-                            <label>Duplex Appreciation Rate</label>
-                            <input flex type="number" style="border-style: solid; border-width: 1px 1px 1px 1px; text-align:center;"ng-model="inputData.appreciationRate" aria-label="home appreciation rate">
-                            <br>
-                            <md-slider-container>
-                                <md-slider flex step=".1" min="{{minMax.appreciationRateMin}}" aria-label="home appreciation rate" max="{{minMax.appreciationRateMax}}" ng-model="inputData.appreciationRate">
-                                </md-slider>
-                            </md-slider-container>
-                        </md-input-container>
-                        <md-input-container class="md-block">
-                            <label>Vacancy Percentage</label>
-                            <input flex type="number" style="border-style: solid; border-width: 1px 1px 1px 1px; text-align:center;"ng-model="inputData.vacancy" aria-label="vacancy percent">
-                            <br>
-                            <md-slider-container>
-                                <md-slider flex step="1" min="{{minMax.vacancyMin}}" aria-label="vacancy percent" max="{{minMax.vacancyMax}}" ng-model="inputData.vacancy">
-                                </md-slider>
-                            </md-slider-container>
-                        </md-input-container>
-                        <md-input-container class="md-block">
-                            <label>Property Tax</label>
-                            <input flex type="number" style="border-style: solid; border-width: 1px 1px 1px 1px; text-align:center;"ng-model="inputData.propertyTax" aria-label="vacancy percent">
-                            <br>
-                            <md-slider-container>
-                                <md-slider flex step="1" min="{{minMax.propertyTaxMin}}" aria-label="vacancy percent" max="{{minMax.propertyTaxMax}}" ng-model="inputData.propertyTax">
-                                </md-slider>
-                            </md-slider-container>
-                        </md-input-container>
-
-                        <h2>Tax Information</h2>
-                        <md-input-container class="md-block">
-                            <label>Income</label>
-                            <input flex type="number" style="border-style: solid; border-width: 1px 1px 1px 1px; text-align:center;"ng-model="inputData.income" aria-label="income">
-                            <br>
-                            <md-slider-container>
-                                <md-slider flex step="10000" min="{{minMax.incomeMin}}" aria-label="income" max="{{minMax.incomeMax}}" ng-model="inputData.income">
-                                </md-slider>
-                            </md-slider-container>
-                        </md-input-container>
-
-                        <md-switch ng-model="inputData.maritalStatus" aria-label="marital status" ng-true-value="'Married'" ng-false-value="'Single'" class="md-primary">
-                            Marital Status: <p ng-show="inputData.maritalStatus">{{inputData.maritalStatus}}</p>
-                        </md-switch>
-                    </form>
-                </md-content>
-            </div>
-        </md-sidenav>
         <div flex="no-grow" style="overflow: scroll; height:90vh;">
             <md-content>
-                <div layout="column" layout-align="center center">
-                    <div class="top-text" style="text-align:center;">
-                        <h2>Should you buy a duplex?</h2>
-                        <p>There are lots of websites out there that will help you compare the benefits of renting and buying. But what if you're interested in buying a duplex and renting it out? Duplex ownership can be a great opportunity to build equity in a house while also earning rental income. Plus the tax benefits can be amazing.</p>
+                <form>
+                  <div layout="row">
+                    <md-input-container class="md-block">
+                      <label>Task Name</label>
+                      <input ng-model="task.name">
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                      <label>Type</label>
+                      <input ng-model="task.type">
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                      <label>Value</label>
+                      <input ng-model="task.value">
+                    </md-input-container>
+                    <div>
+                      <md-button type="submit" ng-click="crown()">Submit</md-button>
                     </div>
-
-                    <div class="summary">
-                        <h4>Over {{inputData.years}} years, you could {{topMessage}}</h4>
-                    </div>
-
-                    <div google-chart chart="myChartObject" class="chick-chart"></div>
-
-
-                    <div google-chart chart="hiddenChartObject" class="chick-chart"></div>
-
-
-                    <div layout="row" layout-padding layout-align="center center" class="email-box">
-                        <div flex="33">
-                            <md-button class="md-raised md-primary" ng-click="submitEmail()">Contact Me</button>
-                        </div>
-                        <div flex="66">
-                            <md-input-container flex="no-grow" class="md-block">
-                                <label>email address</label>
-                                <input ng-model="submit.email">
-                            </md-input-container>
-                        </div>
-                    </div>
-                    <div id="admin-link">
-                            <a href = "/views/login.html">Admin Login</a>
-                    </div>
-                </div>
+                  </div>
+                </form>
             </md-content>
         </div>
     </div>

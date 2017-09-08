@@ -14,6 +14,7 @@ var defaultModel = require('./models/default.js');
 
 // ROUTES
 var index = require('./routes/index.js');
+var default_value = require('./routes/default.js')
 
 // DATABASE VARS
 var mongoURI =    process.env.MONGODB_URI ||
@@ -99,10 +100,7 @@ app.get('/checkDB', function(req, res){
     console.log('defaultsExist =', defaultsExist);
     res.send(defaultsExist);
 });
-app.use('/reg', register);
 app.use('/defaults', default_value);
-app.use('/submit', submit);
-app.use('/admin', admin);
 app.use('/', index);
 
 // LISTENER
