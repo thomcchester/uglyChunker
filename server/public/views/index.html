@@ -37,23 +37,35 @@
                   <div layout="row">
                     <md-input-container class="md-block">
                       <label>Task Name</label>
-                      <input ng-model="task.name">
+                      <input ng-model="taskName">
                     </md-input-container>
                     <md-input-container class="md-block">
                       <label>Type</label>
-                      <input ng-model="task.type">
+                      <input ng-model="taskType">
                     </md-input-container>
                     <md-input-container class="md-block">
                       <label>Value</label>
-                      <input ng-model="task.value">
+                      <input ng-model="taskValue">
                     </md-input-container>
                     <div>
-                      <md-button type="submit" ng-click="crown()">Submit</md-button>
+                      <md-button type="submit" ng-click="taskAdd()">Submit</md-button>
                     </div>
                   </div>
                 </form>
+                <div>
+                  <div><p>
+                    List of Tasks
+                  </p></div>
+                  <div ng-repeat="x in allTasks">
+                    <span ng-bind="x.taskName"></span>
+                    <span ng-bind="x.taskType"></span>
+                    <span ng-bind="x.taskValue"></span>
+                    <md-button class="btn" ng-click="remove(x.taskName)">Delete</md-button>
+                  </div>
+                </div>
             </md-content>
         </div>
+
     </div>
 </body>
 </html>
