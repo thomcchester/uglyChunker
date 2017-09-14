@@ -1,6 +1,16 @@
 module.exports = function(grunt) {
     grunt.initConfig({
        pkg: grunt.file.readJSON('package.json'),
+       watch:{
+         scripts:{
+           files:['client/**/*'],
+           tasks:['uglify','copy'],
+           options:{
+             spawn: false,
+             interrupt: true,
+           }
+         }
+       },
        uglify: {
          options: {
             banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
@@ -50,9 +60,11 @@ module.exports = function(grunt) {
         }
        }
     });
-
+    grunt.event.on('watch',function(action,filepath,target){
+      grunt.log.writeln(target+ ': '+filepath+" has"+action)
+    })
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-
-    grunt.registerTask('default', ['copy', 'uglify']);
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.registerTask('default', ['copy', 'uglify', 'watch']);
 };

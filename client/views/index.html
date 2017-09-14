@@ -44,8 +44,16 @@
                       <input ng-model="taskType">
                     </md-input-container>
                     <md-input-container class="md-block">
-                      <label>Value</label>
+                      <label>Value (0-really large number)</label>
                       <input ng-model="taskValue">
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                      <label>Deadline Time</label>
+                      <input ng-model="taskDeadlineTime">
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                      <label>Deadline Date</label>
+                      <input ng-model="taskDeadlineDate">
                     </md-input-container>
                     <div>
                       <md-button type="submit" ng-click="taskAdd()">Submit</md-button>
@@ -58,9 +66,24 @@
                   </p></div>
                   <div ng-repeat="x in allTasks">
                     <span ng-bind="x.taskName"></span>
-                    <span ng-bind="x.taskType"></span>
-                    <span ng-bind="x.taskValue"></span>
                     <md-button class="btn" ng-click="remove(x.taskName)">Delete</md-button>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <p>
+                      List of Types
+                    </p>
+                  </div>
+                  <div>
+                    <div ng-repeat="x in allTypes">
+                      <span>Type:</span>
+                      <span ng-bind="x.type"></span>
+                      <span>Weight:</span>
+                      <span ng-bind="x.weight"></span>
+                      <md-button class="md-raised" ng-click="weightUp(x)">+</md-button>
+                      <md-button class="md-raised" ng-click="weightDown(x)">-</md-button>
+                    </div>
                   </div>
                 </div>
             </md-content>

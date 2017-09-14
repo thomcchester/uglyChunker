@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "grunt && node server/app.js"
+    "start": "node server/app.js"
   },
   "author": "Tommy, Carl, Enrique, Jeremy, Miles",
   "license": "ISC",
@@ -32,5 +32,8 @@
     "nodemailer": "^2.3.2",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-watch": "^1.0.0"
   }
 }
