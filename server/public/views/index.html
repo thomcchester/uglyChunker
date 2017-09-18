@@ -37,24 +37,27 @@
                   <div layout="row">
                     <md-input-container class="md-block">
                       <label>Task Name</label>
-                      <input ng-model="taskName">
+                      <input required ng-model="taskName">
                     </md-input-container>
                     <md-input-container class="md-block">
                       <label>Type</label>
-                      <input ng-model="taskType">
+                      <input required ng-model="taskType">
                     </md-input-container>
                     <md-input-container class="md-block">
                       <label>Value (0-really large number)</label>
-                      <input ng-model="taskValue">
+                      <input required ng-model="taskValue" min="0" type="number">
                     </md-input-container>
                     <md-input-container class="md-block">
                       <label>Deadline Time</label>
-                      <input ng-model="taskDeadlineTime">
+                      <input required type= "time" ng-model="taskDeadlineTime">
                     </md-input-container>
-                    <md-input-container class="md-block">
+
+                    <!-- <md-input-container class="md-block">
                       <label>Deadline Date</label>
-                      <input ng-model="taskDeadlineDate">
-                    </md-input-container>
+                      <md-datepicker ng-model="taskDeadlineDate" name="dateField"></md-datepicker>
+                    </md-input-container> -->
+                    <md-datepicker ng-model="taskDeadlineDate" md-placeholder="Enter date"></md-datepicker>
+
                     <div>
                       <md-button type="submit" ng-click="taskAdd()">Submit</md-button>
                     </div>
@@ -67,6 +70,11 @@
                   <div ng-repeat="x in allTasks">
                     <span ng-bind="x.taskName"></span>
                     <md-button class="btn" ng-click="remove(x.taskName)">Delete</md-button>
+                    <span>Prereqs</span>
+                    <div ng-repeat="y in x.allOthers">
+                      <span ng-bind="y"></span>
+                      <md-checkbox ng-click="toggle(y,x.preReqs)">Prerequisite</md-checkbox>
+                    </div>
                   </div>
                 </div>
                 <div>
