@@ -100,10 +100,10 @@ $scope.remove=function(x){
     for(i=0; i<orderValues.length; i++){
       orderValues[i].relativeValue = $scope.ticketPercentValue($scope.totalTaskValue(orderValues),orderValues[i])
     }
-    console.log(orderValues)
     for(var i = 0; i<orderValues.length;i++){
-      $scope.totalTypeValue(orderValues[i])
+      orderValues[i].typeValue = $scope.totalTypeValue(orderValues[i])
     }
+    console.log(orderValues)
   }
 
   $scope.ticketWeightValue = function(input){
